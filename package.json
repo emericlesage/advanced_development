@@ -1,0 +1,13 @@
+{
+    "name": "backend-minimaliste",
+    "version": "1.0.0",
+    "description": "Backend Node.js minimaliste avec une route de test.",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.4"
+    }
+}

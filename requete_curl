@@ -1,0 +1,14 @@
+Payload : 
+
+PAYLOAD='{"event":"payment_succeeded","amount":4999,"currency":"eur","id":"pay_test_123"}'
+SECRET='whsec_student_test_secret_123'
+TIMESTAMP=$(date +%s)
+
+SIGNATURE=$(printf "%s.%s" "$TIMESTAMP" "$PAYLOAD" \
+  | openssl dgst -sha256 -hmac "$SECRET" -hex \
+  | sed 's/^.* //')
+
+curl -X POST http://localhost:3000/webhook \
+  -H "Content-Type: application/json" \
+  -H "Stripe-Signature: t=$TIMESTAMP,v1=$SIGNATURE" \
+  -d "$PAYLOAD"
