@@ -1,0 +1,4 @@
+name: webhook
+variables:
+  - name: HMAC_SECRET
+    value: mon_secret
