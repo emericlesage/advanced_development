@@ -5,9 +5,19 @@
     "main": "server.js",
     "type": "module",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "start-ts": "tsx server2.ts",
+        "dev": "nodemon --watch src --ext ts --exec ts-node server2.ts"
     },
     "dependencies": {
-        "express": "^4.18.4"
+        "dotenv": "^17.4.2",
+        "express": "^4.22.2"
+    },
+    "devDependencies": {
+        "@types/node": "^26.0.0",
+        "nodemon": "^3.1.14",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.22.4",
+        "typescript": "^6.0.3"
     }
 }
